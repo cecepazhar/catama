@@ -1,0 +1,92 @@
+[app]
+name = "CATama"
+slug = "catama"
+bundle_id = "com.fathforce.catama"
+version = "0.1.0"
+accent_color = "mint"
+error_prefix = "TAMA"
+description = "Sovereign digital pet, NFT marketplace and P2P bazaar with offline-first gamification"
+
+[window]
+title = "CATama"
+width = 1280
+height = 850
+min_width = 900
+min_height = 650
+
+[security]
+master_password_required = false
+profile_pin_enabled = false
+
+[modules]
+sample_slice_enabled = false
+ai_assistant_enabled = true
+pro_licensing_enabled = true
+updater_enabled = true
+crash_reporting_enabled = true
+backup_restore_enabled = true
+
+[roles]
+default_role = "member"
+allowed_roles = ["owner", "partner", "member", "child"]
+
+[[menus]]
+key = "dashboard"
+label = "Dashboard"
+href = "/dashboard"
+icon = "dashboard"
+description = "Sovereign Spark overview, pet status, daily goals and streaks"
+
+[[menus]]
+key = "pets"
+label = "My Pets"
+href = "/pets"
+icon = "cards"
+description = "Primal Beasts and Cyber Mechs collection, evolution and pedigree"
+
+[[menus]]
+key = "colosseum"
+label = "Colosseum"
+href = "/colosseum"
+icon = "analytics"
+description = "Sovereign Colosseum: tournaments, duels and win-rate"
+
+[[menus]]
+key = "bazaar"
+label = "Bazaar"
+href = "/bazaar"
+icon = "wallet"
+description = "Sovereign Bazaar: P2P trading, rental and NFT bridge"
+
+[[menus]]
+key = "care"
+label = "Care"
+href = "/care"
+icon = "form"
+description = "Nutrition, discipline, rest and training schedules"
+
+[[menus]]
+key = "games"
+label = "Mini-Games"
+href = "/games"
+icon = "cards"
+description = "Age-appropriate mini-games, coding challenges and language drills"
+
+[[menus]]
+key = "reports"
+label = "Reports"
+href = "/reports"
+icon = "blog"
+description = "Growth, market value and DNA certificate reports"
+
+[billing]
+enabled = true
+product_code = "CATAMA"
+gcc_base_url = "https://gcc.fathforce.com"
+offline_days = 7
+refresh_hours = 6
+currencies = ["USD"]
+
+[[billing.public_keys]]
+kid = "gcc-2026-10"
+ed25519 = "Su0nese5LuWHeNPFIz69p0HGUsdT49rnEn82fbtY2S8="
