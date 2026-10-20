@@ -30,9 +30,10 @@
   import AllMenusSheet from '$lib/components/AllMenusSheet.svelte';
   import { getAmbientStore } from '$lib/stores/ambient.svelte';
   import { getPro } from '$lib/stores/pro.svelte';
+  import { APP_CONFIG } from '$lib/generated/app';
 
   let isCollapsed = $state(false);
-  let isVaultUnlocked = $state(false);
+  let isVaultUnlocked = $state(!APP_CONFIG.security.masterPasswordRequired);
   let mobileDrawerOpen = $state(false);
   let allMenusSheetOpen = $state(false);
   let pendingCrashReport = $state<ScrubbedCrashReport | null>(null);
@@ -76,13 +77,17 @@
 
   onMount(() => {
     initTheme();
-    invoke<boolean>('is_vault_unlocked')
-      .then((unlocked) => {
-        isVaultUnlocked = unlocked;
-      })
-      .catch(() => {
-        isVaultUnlocked = false;
-      });
+    if (APP_CONFIG.security.masterPasswordRequired) {
+      invoke<boolean>('is_vault_unlocked')
+        .then((unlocked) => {
+          isVaultUnlocked = unlocked;
+        })
+        .catch(() => {
+          isVaultUnlocked = false;
+        });
+    } else {
+      isVaultUnlocked = true;
+    }
 
     getPendingCrashReport()
       .then((report) => {
@@ -137,7 +142,9 @@
 {/if}
 
 {#if !isVaultUnlocked}
-  <LockScreen onUnlocked={() => (isVaultUnlocked = true)} />
+  {#if APP_CONFIG.security.masterPasswordRequired}
+    <LockScreen onUnlocked={() => (isVaultUnlocked = true)} />
+  {/if}
 {:else}
   <!-- Shell: Unified seamless background (Title bar and sidebar share the background with no dividing line cut) -->
   <div class="flex flex-col h-screen bg-neutral-100 dark:bg-[#0e0e0e] text-neutral-800 dark:text-neutral-300 font-sans transition-colors duration-150 pb-[env(safe-area-inset-bottom,0px)] select-none">

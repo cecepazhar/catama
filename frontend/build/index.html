@@ -1,1 +1,54 @@
-<!DOCTYPE html><html><head><title>CAFramework</title></head><body><div id="app"></div></body></html>
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>CAFramework</title>
+    <script>
+      try {
+        const theme = localStorage.getItem('caframework-theme');
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>
+    <link href="/_app/immutable/entry/start.D29JMMkj.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/y2QeZxZR.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/Cqoltuef.js" rel="modulepreload">
+		<link href="/_app/immutable/entry/app.DTsAYmKD.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/CXnWGUKM.js" rel="modulepreload">
+		<link href="/_app/immutable/nodes/0.CV5hG3Yq.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/CfXmXtEX.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/D3-rp1KA.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/DRT9iBsg.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/DPku7FeV.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/CXTcWhJW.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/CqilImKa.js" rel="modulepreload">
+		
+		<link href="/_app/immutable/assets/ai.fXSWue7C.css" rel="stylesheet">
+		<link href="/_app/immutable/assets/0.Da0yvg2s.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">
+			<script>
+				{
+					__sveltekit_1agufsr = {
+						base: ""
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/_app/immutable/entry/start.D29JMMkj.js"),
+						import("/_app/immutable/entry/app.DTsAYmKD.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

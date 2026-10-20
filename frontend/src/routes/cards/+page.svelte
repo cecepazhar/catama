@@ -27,8 +27,8 @@
 
   const projects: ProjectCard[] = [
     {
-      id: 'proj-caterm',
-      title: 'CATerm',
+      id: 'proj-catama',
+      title: 'CATama',
       description: 'Sovereign SSH/SFTP terminal client with zero-knowledge encrypted vault and Hana AI.',
       category: 'Terminal',
       status: 'STABLE',
